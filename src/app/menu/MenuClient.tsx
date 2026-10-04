@@ -63,14 +63,14 @@ export default function MenuClient() {
       </div>
 
       {/* Category filter tabs */}
-      <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter by category">
+      <div className="flex overflow-x-auto pb-1.5 sm:pb-0 sm:flex-wrap gap-2 -mx-4 px-4 sm:mx-0 sm:px-0 no-scrollbar" role="tablist" aria-label="Filter by category">
         {categories.map((cat) => (
           <button
             key={cat}
             role="tab"
             aria-selected={activeCategory === cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
+            className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer shrink-0 ${
               activeCategory === cat
                 ? "bg-[#42210b] text-white"
                 : "bg-[#f7f2ea] hover:bg-[#ebdccb] text-stone-700"

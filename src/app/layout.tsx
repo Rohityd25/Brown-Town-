@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartProvider from "@/components/CartProvider";
+import MobileBottomBar from "@/components/MobileBottomBar";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.siteUrl),
@@ -105,8 +106,9 @@ export default function RootLayout({
           </aside>
 
           <Header />
-          <main>{children}</main>
+          <main className="pb-16 lg:pb-0">{children}</main>
           <Footer />
+          <MobileBottomBar />
         </CartProvider>
 
         {/* LocalBusiness JSON-LD */}

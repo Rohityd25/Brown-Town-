@@ -137,79 +137,85 @@ export default function CartPage() {
             {items.map((item) => (
               <div
                 key={`${item.productId}-${item.selectedSize}`}
-                className="p-4 rounded-2xl bg-white border border-[#ebdccb]/70 shadow-xs flex items-center gap-4"
+                className="p-3 sm:p-4 rounded-2xl bg-white border border-[#ebdccb]/70 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4"
               >
-                <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-stone-100 shrink-0">
-                  <Image
-                    src={item.productImage}
-                    alt={item.productName}
-                    fill
-                    className="object-cover"
-                    sizes="64px"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <Link
-                    href={`/products/${item.productSlug}`}
-                    className="font-serif text-sm font-bold text-[#42210b] hover:text-[#c8822a] transition-colors block truncate"
-                  >
-                    {item.productName}
-                  </Link>
-                  <p className="text-xs text-stone-500">{item.selectedSize}</p>
-                  <p className="text-xs font-semibold text-[#42210b] mt-0.5">
-                    ₹{item.price.toLocaleString("en-IN")} each
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-2 shrink-0">
-                  <button
-                    onClick={() =>
-                      updateQuantity(
-                        item.productId,
-                        item.selectedSize,
-                        item.quantity - 1
-                      )
-                    }
-                    className="w-8 h-8 rounded-lg bg-[#f7f2ea] hover:bg-[#ebdccb] flex items-center justify-center text-[#42210b] transition-colors"
-                    aria-label="Decrease quantity"
-                  >
-                    <span className="material-symbols-outlined text-[16px]">
-                      remove
-                    </span>
-                  </button>
-                  <span className="w-7 text-center font-bold text-sm text-[#42210b]">
-                    {item.quantity}
-                  </span>
-                  <button
-                    onClick={() =>
-                      updateQuantity(
-                        item.productId,
-                        item.selectedSize,
-                        item.quantity + 1
-                      )
-                    }
-                    className="w-8 h-8 rounded-lg bg-[#f7f2ea] hover:bg-[#ebdccb] flex items-center justify-center text-[#42210b] transition-colors"
-                    aria-label="Increase quantity"
-                  >
-                    <span className="material-symbols-outlined text-[16px]">
-                      add
-                    </span>
-                  </button>
+                {/* Top / Left: Image + Info */}
+                <div className="flex items-center gap-3 min-w-0 flex-1">
+                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-stone-100 shrink-0">
+                    <Image
+                      src={item.productImage}
+                      alt={item.productName}
+                      fill
+                      className="object-cover"
+                      sizes="64px"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <Link
+                      href={`/products/${item.productSlug}`}
+                      className="font-serif text-sm font-bold text-[#42210b] hover:text-[#c8822a] transition-colors block truncate"
+                    >
+                      {item.productName}
+                    </Link>
+                    <p className="text-xs text-stone-500">{item.selectedSize}</p>
+                    <p className="text-xs font-semibold text-[#42210b] mt-0.5">
+                      ₹{item.price.toLocaleString("en-IN")} each
+                    </p>
+                  </div>
                 </div>
 
-                <div className="text-right shrink-0">
-                  <p className="font-bold text-[#42210b] text-sm">
-                    ₹{(item.price * item.quantity).toLocaleString("en-IN")}
-                  </p>
-                  <button
-                    onClick={() =>
-                      removeItem(item.productId, item.selectedSize)
-                    }
-                    className="text-[11px] text-red-500 hover:text-red-600 mt-0.5"
-                    aria-label={`Remove ${item.productName} from cart`}
-                  >
-                    Remove
-                  </button>
+                {/* Bottom on mobile / Right on desktop: Quantity controls & Total */}
+                <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#ebdccb]/40">
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 bg-[#f7f2ea] p-1 rounded-xl">
+                    <button
+                      onClick={() =>
+                        updateQuantity(
+                          item.productId,
+                          item.selectedSize,
+                          item.quantity - 1
+                        )
+                      }
+                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white hover:bg-[#ebdccb] flex items-center justify-center text-[#42210b] shadow-2xs transition-colors"
+                      aria-label="Decrease quantity"
+                    >
+                      <span className="material-symbols-outlined text-[15px]">
+                        remove
+                      </span>
+                    </button>
+                    <span className="w-6 text-center font-bold text-xs sm:text-sm text-[#42210b]">
+                      {item.quantity}
+                    </span>
+                    <button
+                      onClick={() =>
+                        updateQuantity(
+                          item.productId,
+                          item.selectedSize,
+                          item.quantity + 1
+                        )
+                      }
+                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white hover:bg-[#ebdccb] flex items-center justify-center text-[#42210b] shadow-2xs transition-colors"
+                      aria-label="Increase quantity"
+                    >
+                      <span className="material-symbols-outlined text-[15px]">
+                        add
+                      </span>
+                    </button>
+                  </div>
+
+                  <div className="text-right shrink-0">
+                    <p className="font-bold text-[#42210b] text-sm">
+                      ₹{(item.price * item.quantity).toLocaleString("en-IN")}
+                    </p>
+                    <button
+                      onClick={() =>
+                        removeItem(item.productId, item.selectedSize)
+                      }
+                      className="text-[11px] text-red-500 hover:text-red-600 mt-0.5"
+                      aria-label={`Remove ${item.productName} from cart`}
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

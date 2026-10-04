@@ -105,14 +105,14 @@ export default function HomePage() {
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-3.5 pt-1 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1 w-full sm:w-auto">
                 <a
                   href={whatsappUrl(
                     "Hi Brown Town! I would like to place an order."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#c8822a] hover:bg-[#42210b] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#c8822a] hover:bg-[#42210b] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center"
                 >
                   <span className="material-symbols-outlined text-[18px]">
                     chat
@@ -121,7 +121,7 @@ export default function HomePage() {
                 </a>
                 <Link
                   href="/menu"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-[#f7f2ea] text-[#42210b] border border-[#ebdccb] font-semibold text-sm shadow-xs transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-[#f7f2ea] text-[#42210b] border border-[#ebdccb] font-semibold text-sm shadow-xs transition-colors text-center"
                 >
                   <span className="material-symbols-outlined text-[18px] text-[#c8822a]">
                     restaurant_menu
@@ -131,28 +131,28 @@ export default function HomePage() {
               </div>
 
               {/* Trust markers */}
-              <div className="pt-4 grid grid-cols-3 gap-4 border-t border-[#ebdccb]/60 w-full max-w-lg">
+              <div className="pt-4 grid grid-cols-3 gap-2 sm:gap-4 border-t border-[#ebdccb]/60 w-full max-w-lg">
                 <div className="flex flex-col">
-                  <span className="font-bold text-[#42210b] text-base">
+                  <span className="font-bold text-[#42210b] text-sm sm:text-base">
                     Daily Fresh
                   </span>
-                  <span className="text-xs text-stone-600 mt-0.5">
+                  <span className="text-[10px] sm:text-xs text-stone-600 mt-0.5">
                     Morning Batches
                   </span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-bold text-[#42210b] text-base">
+                  <span className="font-bold text-[#42210b] text-sm sm:text-base">
                     Near Bitu Dhaba
                   </span>
-                  <span className="text-xs text-stone-600 mt-0.5">
+                  <span className="text-[10px] sm:text-xs text-stone-600 mt-0.5">
                     Najafgarh Landmark
                   </span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-bold text-emerald-700 text-base">
+                  <span className="font-bold text-emerald-700 text-sm sm:text-base">
                     100% Eggless
                   </span>
-                  <span className="text-xs text-stone-600 mt-0.5">
+                  <span className="text-[10px] sm:text-xs text-stone-600 mt-0.5">
                     Pure Veg Kitchen
                   </span>
                 </div>
@@ -388,14 +388,14 @@ export default function HomePage() {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-3.5 pt-4 w-full">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4 w-full">
                 <a
                   href={whatsappUrl(
                     "Hi Yogesh! I have a reference photo for a custom cake."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#c8822a] hover:bg-white hover:text-[#42210b] text-white font-bold text-sm shadow-md transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#c8822a] hover:bg-white hover:text-[#42210b] text-white font-bold text-sm shadow-md transition-all text-center"
                 >
                   <span className="material-symbols-outlined text-[18px]">
                     add_photo_alternate
@@ -404,7 +404,7 @@ export default function HomePage() {
                 </a>
                 <a
                   href={siteConfig.phone.secondaryHref}
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-colors text-center"
                 >
                   <span className="material-symbols-outlined text-[18px]">
                     call
@@ -475,10 +475,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3.5">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full lg:w-auto">
             <a
               href={siteConfig.phone.primaryHref}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#c8822a] hover:bg-amber-600 text-white font-bold text-sm shadow-md transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#c8822a] hover:bg-amber-600 text-white font-bold text-sm shadow-md transition-all text-center"
             >
               <span className="material-symbols-outlined text-[18px]">
                 call
@@ -489,7 +489,7 @@ export default function HomePage() {
               href={whatsappUrl("Hi Brown Town! I would like to place an order.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-colors text-center"
             >
               <span className="material-symbols-outlined text-[18px]">chat</span>
               WhatsApp Order
@@ -763,12 +763,12 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 pt-2 w-full">
                 <a
                   href={siteConfig.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#42210b] hover:bg-[#c8822a] text-white font-semibold text-xs shadow-xs transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#42210b] hover:bg-[#c8822a] text-white font-semibold text-xs shadow-xs transition-colors text-center"
                 >
                   <span className="material-symbols-outlined text-[16px]">
                     directions
@@ -777,7 +777,7 @@ export default function HomePage() {
                 </a>
                 <a
                   href={siteConfig.phone.primaryHref}
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-[#f7f2ea] text-[#42210b] border border-[#ebdccb] font-semibold text-xs shadow-xs transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-[#f7f2ea] text-[#42210b] border border-[#ebdccb] font-semibold text-xs shadow-xs transition-colors text-center"
                 >
                   <span className="material-symbols-outlined text-[16px] text-[#c8822a]">
                     call
@@ -788,7 +788,7 @@ export default function HomePage() {
                   href={whatsappUrl("Hi Brown Town! I have an enquiry.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs shadow-xs transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs shadow-xs transition-colors text-center"
                 >
                   <span className="material-symbols-outlined text-[16px]">
                     chat
@@ -891,12 +891,12 @@ export default function HomePage() {
             celebration designs with bespoke flowers, tiers, and flavors.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-2 w-full sm:w-auto">
             <a
               href={whatsappUrl("Hi Brown Town! I would like to place an order now.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-[#c8822a] hover:bg-white hover:text-[#42210b] text-white font-bold text-sm shadow-xl transition-all"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-[#c8822a] hover:bg-white hover:text-[#42210b] text-white font-bold text-sm shadow-xl transition-all text-center"
             >
               <span className="material-symbols-outlined text-[18px]">
                 shopping_bag
@@ -905,7 +905,7 @@ export default function HomePage() {
             </a>
             <a
               href={siteConfig.phone.primaryHref}
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-colors text-center"
             >
               <span className="material-symbols-outlined text-[18px]">
                 call

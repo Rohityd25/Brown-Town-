@@ -54,26 +54,26 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#ebdccb]/60 transition-shadow duration-300 ${isScrolled ? "shadow-md" : "shadow-sm"}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-4">
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3 shrink-0 group"
+          className="flex items-center gap-2.5 sm:gap-3 shrink-0 group min-w-0"
           aria-label="Brown Town Cake & Cookies — Home"
         >
           <Image
             src={siteConfig.logoUrl}
             alt="Brown Town Cake & Cookies logo"
-            width={48}
-            height={48}
-            className="rounded-full object-cover border border-[#c8822a]/40 shadow-sm group-hover:scale-105 transition-transform"
+            width={44}
+            height={44}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border border-[#c8822a]/40 shadow-sm group-hover:scale-105 transition-transform shrink-0"
             priority
           />
-          <div className="flex flex-col">
-            <span className="font-serif text-2xl font-bold tracking-tight text-[#42210b] leading-tight">
+          <div className="flex flex-col min-w-0">
+            <span className="font-serif text-lg sm:text-2xl font-bold tracking-tight text-[#42210b] leading-tight truncate">
               Brown Town
             </span>
-            <span className="text-[10px] uppercase tracking-widest text-[#c8822a] font-semibold">
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-[#c8822a] font-semibold truncate">
               Cake &amp; Cookies &bull; Najafgarh
             </span>
           </div>
@@ -100,7 +100,7 @@ export default function Header() {
         </nav>
 
         {/* Desktop Action Buttons */}
-        <div className="hidden sm:flex items-center gap-3 shrink-0">
+        <div className="hidden lg:flex items-center gap-3 shrink-0">
           <a
             href={siteConfig.phone.primaryHref}
             className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#f7f2ea] text-[#42210b] text-xs font-semibold hover:bg-[#ebdccb]/50 transition-colors"
